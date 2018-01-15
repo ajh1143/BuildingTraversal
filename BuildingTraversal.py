@@ -6,17 +6,17 @@ import pandas as pd
 
 # Simulate building_walk() 'number_of_participants' times and 'error_rate' factor
 def building_walk(number_of_participants, error_rate):
-group_total = []
-names = []
+    group_total = []
+    names = []
 
     for i in range(number_of_participants) :
         name = ["Participant: " + str(i)]
         individual_walk = [0]
         for x in range(100) :
-            step = individual_walk[-1]
+            move = individual_walk[-1]
             dice = np.random.randint(1,7)
             if dice <= 2:
-                move = max(0, step - 1)
+                move = max(0, move - 1)
             elif dice <= 5:
                 move = move + 1
             else:
